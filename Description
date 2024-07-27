@@ -1,0 +1,106 @@
+Objective:
+The goal of this project was to analyze pizza sales data and create an interactive dashboard using Power BI to provide 
+insights into sales performance. The dashboard highlights key metrics such as total revenue, average order value, total pizzas sold, 
+total orders, and average pizzas per order. Additionally, it showcases trends in daily and hourly orders, sales distribution 
+by pizza category and size, and the best and worst-selling pizzas.
+
+Steps 
+Data Collection:
+Gathered raw data related to pizza sales, including order details, sales figures, and pizza categories.
+Data Preparation (SQL):
+Data Cleaning:
+Loaded raw data into a SQL database.
+Removed any duplicate or irrelevant entries to ensure data accuracy.
+Data Transformation:
+Used SQL queries to transform raw data into a structured format suitable for analysis.
+Created views and aggregated tables to summarize data for key metrics such as total revenue, average order value, 
+total pizzas sold, total orders, and average pizzas per order.
+Query Development:
+Developed SQL queries to extract necessary data for different aspects of the analysis, including:
+Daily and hourly order trends.
+Percentage sales by category and size.
+Top and bottom-selling pizzas.
+
+Data Visualization (Power BI):
+Data Import:
+Imported the cleaned and transformed data from the SQL database into Power BI.
+Dashboard Design:
+Designed the layout of the dashboard to ensure it is user-friendly and visually appealing.
+Created various visualizations including bar charts, line charts, and pie charts to represent key metrics and trends.
+Visualizations Created:
+Key Metrics:
+Total Revenue, Average Order Value, Total Pizzas Sold, Total Orders, Average Pizzas Per Order.
+Trends Analysis:
+Daily Order Trends (bar chart).
+Hourly Order Trends (line chart).
+Sales Distribution:
+Percentage Sales by Category (pie chart).
+Percentage Sales by Pizza Size (pie chart).
+Pizzas Sold by Category (bar chart).
+Top and Bottom Selling Pizzas:
+Top 5 Best Selling Pizzas (bar chart).
+Bottom 5 Selling Pizzas (bar chart).
+
+Interactivity and Final Touches:
+Added interactive features such as slicers and filters to allow users to explore the data dynamically.
+Applied themes and formatting to enhance visual appeal and ensure consistency.
+
+Deployment:
+Published the final Power BI dashboard for stakeholders to access and interact with the insights.
+
+Key Insights
+
+Total Revenue and Sales Performance:
+The total revenue generated from pizza sales is $817.86K.
+The average order value is $38.31.
+A total of 50,000 pizzas were sold across 21,000 orders, with an average of 2 pizzas per order.
+Daily Order Trends:
+Sales are relatively steady throughout the week, with a noticeable increase on weekends.
+Peak sales days are Friday and Saturday, with 3.5K and 3.2K orders respectively.
+Hourly Order Trends:
+Orders peak at lunchtime (12 PM) and dinner time (6 PM), with the highest orders at 1 PM (2.5K) and 7 PM (1.8K).
+There is a sharp increase in orders from 11 AM to 1 PM and again from 5 PM to 7 PM.
+Sales by Pizza Category:
+Classic pizzas are the most popular, accounting for 26.91% of total sales.
+Supreme and Veggie categories follow closely, each contributing around 25% to total sales.
+Chicken pizzas are the least popular, making up 23.68% of total sales.
+Sales by Pizza Size:
+Large (L) pizzas are the most sold size, making up 45.89% of sales.
+Medium (M) pizzas account for 30.49%, while Extra-Large (XL) and Small (S) pizzas make up 21.77% and 1.85% respectively.
+Pizzas Sold by Category:
+The Classic category leads with 14,888 pizzas sold.
+Supreme, Veggie, and Chicken categories sold 11,987, 11,649, and 11,050 pizzas respectively.
+Top 5 Best Selling Pizzas:
+The Classic Deluxe is the top-selling pizza with 2,453 units sold.
+The Barbecue Chicken, Hawaiian Paradise, Pepperoni Feast, and Thai Chicken pizzas are also among the top sellers, 
+with sales ranging from 2,371 to 2,432 units.
+Bottom 5 Selling Pizzas:
+The Soppressata and Spinach Supreme are the least popular, with 961 and 950 units sold respectively.
+The Calabrese, Mediterranean, and Brie Carre pizzas are also among the bottom sellers, with sales ranging from 490 to 937 units.
+
+Insights Utilization
+
+Marketing and Promotions:
+Focus marketing efforts on promoting pizzas that are less popular to balance sales.
+Run special promotions during peak hours to maximize revenue.
+Inventory Management:
+Stock up more on ingredients for Classic and Large pizzas due to their higher demand.
+Optimize inventory for lower-selling pizzas to reduce waste.
+Menu Optimization:
+Consider revising or discontinuing the least popular pizzas to streamline the menu.
+Highlight best-selling pizzas to attract more customers.
+Operational Efficiency:
+Prepare for higher order volumes during lunch and dinner hours by adjusting staffing and kitchen operations accordingly.
+Use data on daily and hourly trends to manage delivery schedules and ensure timely service.
+
+Files Used
+SQL Query:
+Contains the SQL queries used for data cleaning, transformation, and extraction.
+Pizza Sales_1.png:
+Screenshot of the first part of the Power BI dashboard, showing key metrics, daily and hourly trends, and sales distribution 
+by category and size.
+Pizza Sales_2.png:
+Screenshot of the second part of the Power BI dashboard, showing the top and bottom-selling pizzas.
+
+By leveraging these insights, the business can make informed decisions to enhance sales, improve customer satisfaction, 
+and streamline operations. Providing valuable insights into sales performance and helping stakeholders make data-driven decisions.
