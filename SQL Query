@@ -1,0 +1,90 @@
+--KPI'S
+--1\ Total Revenue
+select round(SUM(quantity*price),2) as total_revenue
+from order_details od
+join pizzas p
+on od.pizza_id=p.pizza_id
+
+--2\ Average Order Value
+-- total order value/ count of order
+select round(SUM(quantity*price)/COUNT(distinct order_id),2) as average_order_value
+from order_details od
+join pizzas p
+on od.pizza_id=p.pizza_id
+
+--3\ Total Pizza sold
+select SUM(quantity) as total_pizza_sold
+from order_details
+
+--4\ Total Orders
+select COUNT(distinct order_id) as total_orders
+from order_details
+
+--5\ Average Pizza per Order
+--pizzas sold/number of pizzas
+select SUM(quantity)/COUNT(distinct order_id)  as average_pizza_per_order
+from order_details
+
+--Question to answer
+
+--1\ Daily trends for total orders
+select FORMAT(date,'dddd') as day_of_week,
+       COUNT(distinct order_id) as total_orders
+from orders
+group by  FORMAT(date,'dddd')
+order by  total_orders desc
+
+--2\ Hourly trend for total orders
+select DATEPART(hour,time) as _hour,
+       COUNT(distinct order_id) as count
+from orders
+group by DATEPART(hour,time)
+order by _hour
+
+--3\ percentage of sales by pizza category
+--calc total revenue per category>>x
+--% sales calc as (x/total revenue)*100
+select category, SUM(quantity*price) revenue,
+	   round(SUM(quantity*price)*100/ (select sum(quantity*price)from pizzas p2 
+										 join order_details od2
+										 on p2.pizza_id=od2.pizza_id),2) percentage_sales
+from pizzas p
+join pizza_types pt on p.pizza_type_id=pt.pizza_type_id
+join order_details od on od.pizza_id=p.pizza_id
+group by category
+order by percentage_sales desc
+
+--4\ percentage sales by pizza size
+select size, SUM(quantity*price) revenue,
+	   round(SUM(quantity*price)*100/ (select sum(quantity*price)from pizzas p2 
+										 join order_details od2
+										 on p2.pizza_id=od2.pizza_id),2) percentage_sales
+from pizzas p
+join pizza_types pt on p.pizza_type_id=pt.pizza_type_id
+join order_details od on od.pizza_id=p.pizza_id
+group by size
+order by percentage_sales desc
+
+--5\ total pizzas sold by category
+select category,SUM(quantity) quantity_sold
+from pizzas p
+join pizza_types pt on p.pizza_type_id=pt.pizza_type_id
+join order_details od on od.pizza_id=p.pizza_id
+group by category
+order by SUM(quantity) desc
+
+--6\ top 5 best sellers by total pizzas sold
+select top 5 name , SUM(quantity) as total_pizza_sold
+from pizzas p
+join pizza_types pt on p.pizza_type_id=pt.pizza_type_id
+join order_details od on od.pizza_id=p.pizza_id
+group by name
+order by SUM(quantity) desc
+
+--7\ bottom 5 worst sellers by total pizzas sold
+select top 5 name , SUM(quantity) as total_pizza_sold
+from pizzas p
+join pizza_types pt on p.pizza_type_id=pt.pizza_type_id
+join order_details od on od.pizza_id=p.pizza_id
+group by name
+order by SUM(quantity) 
